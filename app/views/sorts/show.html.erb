@@ -1,0 +1,19 @@
+<h1>查看分类</h1>
+
+<p>
+<strong>LOGO:</strong>
+<%= image_tag(@sort.logo_url) %>
+</p>
+
+<p>
+<strong>名字：</strong>
+<%= @sort.name %>
+</p>
+
+<p>
+<strong>介绍：</strong>
+<%= @sort.introduction%>
+</p>
+
+<%= link_to '返回', sorts_path %>
+<%= link_to '编辑', edit_sort_path(@sort)  %>

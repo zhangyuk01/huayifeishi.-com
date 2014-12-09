@@ -1,0 +1,24 @@
+<h1>已有分类</h1>
+<%= link_to '创建分类', new_sort_path %>
+ <table>
+   <tr>
+    <th>LOGO</th>
+    <th>名字</th>
+    <th>介绍</th>
+  </tr>
+
+    <% @sorts.each do |sort| %>
+      <tr>
+        <td><%= sort.logo %></td>
+        <td><%= sort.name %></td>
+        <td><%= sort.introduction %></td>
+        <td><%= link_to '查看', sort_path(sort) %></td>
+        <td><%= link_to '编辑', edit_sort_path(sort) %></td>
+        <td><%= link_to '删除', sort_path(sort),
+                              method: :delete, data: { confirm: '确定删除吗?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to '所有分类', controller: 'sorts' %>
+

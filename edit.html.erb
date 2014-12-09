@@ -1,0 +1,28 @@
+<h1>编辑分类 </h1>
+<%= form_for :sort, url: sort_path(@sort), method: :patch do |f| %>
+  <% if @sort.errors.any? %>
+    <div id="error_explanation">
+    <h2><%= pluralize(@sort.errors.count, "error") %> prohibited
+      this sort from being saved:</h2>
+    <ul>
+    <% @sort.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+    <p>
+    <%= f.label :名字 %><br>
+    <%= f.text_field :name %>
+  </p>
+
+    <p>
+      <%= f.label :介绍 %><br>
+      <%= f.text_area :introduction %>
+    </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+    <%= link_to '返回', sorts_path %>
