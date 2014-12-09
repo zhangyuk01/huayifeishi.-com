@@ -14,6 +14,13 @@
 <strong>介绍：</strong>
 <%= @sort.introduction%>
 </p>
-
+<p>
+<strong>Parent_id:</strong>
+<%= @sort.parent_id %>
+</p>
 <%= link_to '返回', sorts_path %>
 <%= link_to '编辑', edit_sort_path(@sort)  %>
+
+<p>
+<%= link_to '创建文章', new_page_path(@page) %>
+</p>

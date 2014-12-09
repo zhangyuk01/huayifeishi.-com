@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208073607) do
+ActiveRecord::Schema.define(version: 20141209063659) do
+
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "parent_id"
+    t.integer  "sort_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["sort_id"], name: "index_pages_on_sort_id", using: :btree
 
   create_table "sorts", force: true do |t|
     t.string   "name"
@@ -19,6 +30,7 @@ ActiveRecord::Schema.define(version: 20141208073607) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "logo"
+    t.integer  "parent_id"
   end
 
 end

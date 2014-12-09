@@ -28,12 +28,8 @@ class SortsController < ApplicationController
 
   def update
     @sort = Sort.find(params[:id])
-
-      if @sort.update(sort_params)
-            redirect_to @sort
-              else
-                    render 'edit'
-              end
+    @sort.update(sort_params)
+    redirect_to @sort
   end
 
   def destroy
@@ -45,6 +41,6 @@ class SortsController < ApplicationController
 
   private
    def sort_params
-   params.require(:sort).permit(:name, :introduction, :logo)
+   params.require(:sort).permit :name, :introduction, :logo , :parent_id
    end
 end
