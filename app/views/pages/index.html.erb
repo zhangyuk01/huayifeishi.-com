@@ -10,7 +10,9 @@
   <% @pages.each do |page| %>
     <tr>
     <td><%= page.title %></td>
-    <td><%= page.content %></td>
+    <td><%= truncate page.content %></td>
+    <% sort =Sort.find_by_id page.sort_id %>
+    <td><%= sort.try :name %></td>
     <td></td>
     <td><%= link_to '查看', page_path(page) %></td>
     <td><%= link_to '编辑', edit_page_path(page) %></td>

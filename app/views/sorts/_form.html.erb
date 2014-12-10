@@ -17,7 +17,7 @@
 </p>
 
 <p>
-<%= f.label :parent_id %><br>
+<%= f.label :所属分类 %><br>
 <%= f.select :parent_id,
   options_from_collection_for_select(Sort.all, :id, :name,
                                      @sort.parent_id),  { :include_blank => true }

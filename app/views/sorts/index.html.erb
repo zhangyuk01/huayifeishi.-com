@@ -5,16 +5,15 @@
     <th>LOGO</th>
     <th>名字</th>
     <th>介绍</th>
-    <th>parent id</th>
     <th>所属分类</th>
+    <th colspan= "2"></th>
   </tr>
 
     <% @sorts.each do |sort| %>
       <tr>
         <td><%= sort.logo %></td>
         <td><%= sort.name %></td>
-        <td><%= sort.introduction %></td>
-        <td><%= sort.parent_id %></td>
+        <td><%= truncate sort.introduction %></td>
         <%
           parent = Sort.find_by_id sort.parent_id
         %>

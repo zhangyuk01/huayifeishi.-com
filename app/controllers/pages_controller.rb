@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def new
+    @page = Page.new
   end
 
   def create
@@ -23,11 +24,14 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
   end
   def update
-    if @page.update(page_params)
-      redirect_to @page
-    else
-      render 'edit'
-    end
+   # if @page.update(page_params)
+   #   redirect_to @page
+   # else
+   #   render 'edit'
+   # end
+    @page = Page.find(params[:id])
+    @page.update(page_params)
+    redirect_to @page
   end
   def destroy
     @page = Page.find(params[:id])

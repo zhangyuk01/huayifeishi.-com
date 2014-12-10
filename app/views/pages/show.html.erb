@@ -12,8 +12,8 @@
 
 <p>
 <strong>所属分类：</strong>
-<% parent = Page.find_by_id.parent_id %>
-<%= parent.try :name %>
+<% sort = Sort.find_by_id @page.sort_id %>
+<%= sort.try :name %>
 </p>
 
 <%= link_to '返回所有文章',pages_path %>

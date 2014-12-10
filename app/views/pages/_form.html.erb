@@ -1,16 +1,16 @@
-<%= form_for :page ,url: pages_path do |f|  %>
+<%= form_for @page do |f|  %>
   <p>
   <%= f.label :标题%><br>
   <%= f.text_field :title %>
   </p>
   <p>
   <%= f.label :内容 %><br>
-  <%= f.text_area :content %>
+  <%= f.cktext_area :content%>
   </p>
   <p>
   <%= f.label :所属分类 %><br>
-  <%= f.select :parent_id, options_from_collection_for_select(Sort.all, :id, :name,
-                                                            @page.parent_id),{ :include_blank => true}%>
+  <%= f.select :sort_id, options_from_collection_for_select(Sort.all, :id, :name,
+                                                            @page.sort_id), { :include_blank => true}%>
   </p>
 
   <p>

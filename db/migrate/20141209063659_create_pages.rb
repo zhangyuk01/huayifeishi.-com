@@ -4,7 +4,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.integer :parent_id
-      t.references :sort, index: true
+      t.integer :sort_id
 
       t.timestamps
     end
