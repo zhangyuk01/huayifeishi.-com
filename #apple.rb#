@@ -1,0 +1,45 @@
+class Apple
+  attr_accessor :color
+  @color="green" 
+  def color
+    return @color
+  end
+
+  def color=(color)
+    @color = color
+  end
+
+  def self.color
+    return @color
+  end
+  
+end
+@apple=Apple.new
+
+@page=Page.find()
+
+apple = Apple.new
+apple.color = 'red'
+
+puts apple.color
+
+puts Apple.color
+
+class Orange
+  #  @color = 'yellow'
+
+
+  def initialize(color)
+    @color = color
+  end
+  
+  def self.color
+  end
+  
+
+  def eat
+  end
+end
+
+orgnge  = Orange.new('red')
+

@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 20141210111312) do
     t.datetime "updated_at"
   end
 
-  add_index "pages", ["sort_id"], name: "index_pages_on_sort_id", using: :btree
-
   create_table "sorts", force: true do |t|
     t.string   "name"
     t.text     "introduction"

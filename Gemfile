@@ -15,3 +15,4 @@ gem 'ckeditor', '4.1.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'therubyracer'

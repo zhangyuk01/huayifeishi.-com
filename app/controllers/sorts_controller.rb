@@ -7,16 +7,23 @@ class SortsController < ApplicationController
     # logger.info "=== params: #{params[:sort]} "
     #render plain: params[:sort].inspect
     @sort = Sort.new(sort_params)
-   if  @sort.save
-     redirect_to @sort
-   else
-     render 'new'
-   end
+    @sort.save!
+    redirect_to @sort
   end
 
   def show
+   # 这个 @sort 就是个 实例instance.
    @sort = Sort.find(params[:id])
+   # 这个name 就是个属性
+   @sort.name
   end
+
+  def front_index
+    render layout: false
+  end
+
+
+
 
   def index
    @sorts= Sort.all

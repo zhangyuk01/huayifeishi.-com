@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  get 'home/index'
-  resources :sorts
+
+
+  resources :sorts do
+    collection do
+      get :front_index
+    end
+  end
+
+
+
+
+
   resources :pages
-  root 'home#index'
 end

@@ -1,7 +1,15 @@
+
 <%= form_for @page do |f|  %>
+  <%# @page = Page.new %>
+<%# form_for @page,{ :url => '/pages/', :method => 'post'}, do |f| %>
+
+  <%# @page = Page.find(1) %>
+<%# form_for @page,{ :url => '/pages/1/update', :method => 'put'}, do |f| %>
+
   <p>
-  <%= f.label :标题%><br>
+  标题: <br>
   <%= f.text_field :title %>
+  <%# = text_field_tag 'page[title]'# %>
   </p>
   <p>
   <%= f.label :内容 %><br>
